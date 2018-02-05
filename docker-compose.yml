@@ -2,7 +2,7 @@ version: '2'
 services:
   elasticsearch:
     image: elasticsearch
-    container_name: elasticsearch
+    # container_name: elasticsearch
     volumes:
       - ${PWD}/esdata1:/usr/share/elasticsearch/data
     ports:
@@ -17,7 +17,7 @@ services:
       context: ${PWD}/logstash
       dockerfile: Dockerfile
     image: nexus.dkp.lanit.ru:888/logstash:1.0.0
-    container_name: logstash
+    # container_name: logstash
     volumes:
       - ${PWD}/logstash/:/etc/logstash/conf.d
     ports:
@@ -30,7 +30,7 @@ services:
 
   kibana:
     image: kibana
-    container_name: kibana
+    # container_name: kibana
     ports:
       - 5601:5601
     depends_on: ['elasticsearch']
