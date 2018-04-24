@@ -1,4 +1,4 @@
-FROM logstash
+FROM logstash:5
 
 COPY logstash.conf /etc/logstash/conf.d/
 
